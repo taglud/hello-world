@@ -1,0 +1,207 @@
+﻿arcmain sessions=10 <  gdf_backup_pipetest.arc.arc>  gdf_backup_pipetest.log 2>&1 &
+arcmain sessions=10 <  restore_gdf_pipetest.res>     restore_gdf_pipetest.log 2>&1 &
+
+curl ipecho.net/plain
+
+set pages 2000 lines 200;
+col name format a60;
+select current_utilization, limit_value 
+    from v$resource_limit 
+    where resource_name='sessions';
+SELECT * FROM V$RECOVERY_FILE_DEST;
+select * from V$FLASH_RECOVERY_AREA_USAGE;
+list backup;
+delete backup completed before 'sysdate -15';
+alter system set db_recovery_file_dest_size=3200G
+
+CROSSCHECK BACKUP DEVICE TYPE DISK COMPLETED BETWEEN 'sysdate -21' AND 'sysdate -10';
+
+T:\TEAMS\ManagedServices_CMP\Czech_Republic\Javier_Fito\Engie
+
+NADA PROD à NADA SECOURS 
+rsync -avrz --delete /appli/sasconfig/*  10.172.41.150:/appli/sasconfig/ 
+GEC PROD à GEC SECOURS 
+rsync -avrz --delete /appli/sasconfig/*  10.172.41.151:/appli/sasconfig/ 
+rsync -avrz  /appli/input/*  10.172.41.151:/appli/input/ (whitout delete, only for the first time)
+
+Ci-dessous vos informations pour vous connecter :
+Identifiant : 282160
+Mot de Passe : uJ8bGcvR5DbS
+
+czech language ID: 5986dd7754af1
+
+setfacl -m user:infa:rwx /home/ftp/amadeus-prod_accengage_01/*
+
+EMP_LIST_USER="/appli/GCC_DBA/liste_user.lst"
+
+http://h1x1amd07i/SitePages/Amadeus.aspx
+http://h1x1amd07i/SitePages/Amadeus.aspx
+
+su -c "ssh Administrateur@10.249.10.162 'C:\GCC_DBA\GetServerSpace.bat'" Administrateur
+
+invoke-command -computer $printserver -scriptblock 
+
+$username = "domain\admin"
+$password = "adminpassword"
+$PSS = ConvertTo-SecureString $password -AsPlainText -Force
+$cred = new-object system.management.automation.PSCredential $username,$PSS
+
+
+amadeus-dev_nallo_01   // nZnBj0AaJg0Zm84fephf
+amadeus-pprod_nallo_01 // nZnBj0AaJg0Zm84fephf
+amadeus-prod_nallo_01 // nZnBj0AaJg0Zm84fephf
+
+GDF04_h1x1minar_1-09_TPA:cat /proc/meminfo
+MemTotal:       528939220 kB
+MemFree:        47589520 kB
+Buffers:          718332 kB
+Cached:         459519292 kB
+
+/var/opt/teradata/vtom_V54/vtom/bin/tmail -se "GE230019@Teradata.com" -to "ludovic.taghe@Teradata.com" -smtp 10.89.129.75 -sub "[XEN] WARNING : CPU SATUREE" -msg "CPU utilisee =  $TOTAL %. Serveur $index"
+
+Créer un lien symbolique dans le HomeDir de l’utilisateur : ln -s /mnt/data/gecchp appli_gecchp
+Créer un lien symbolique dans le HomeDir de l’utilisateur : ln -s /mnt/data/nada/gec appli_gecec
+
+drwxr-x--- 7 amadeus-prod_cabestan_01         CABESTAN01          4096 2016-08-25 17:05 amadeus-prod_cabestan_01
+drwxrwx--- 3 amadeus-prod_cabestan_01 CABESTAN01   8192 2016-09-21 23:00 AmadeustoCabestan
+drwxrwx--- 4 amadeus-prod_cabestan_01 CABESTAN01 352256 2016-09-22 06:46 CabestantoAmadeus
+drwxrwx--- 2 amadeus-prod_cabestan_01 CABESTAN01   4096 2016-09-22 07:01 emission
+drwxrwx--- 2 amadeus-prod_cabestan_01 CABESTAN01   4096 2016-08-25 17:05 reception
+GDF04_1-21 h1x1jeklo_FTPS :>cd reception/
+GDF04_1-21 h1x1jeklo_FTPS :>ll
+total 0
+GDF04_1-21 h1x1jeklo_FTPS :>touch me
+GDF04_1-21 h1x1jeklo_FTPS :>rm me
+
+Cabestan_retourADLC_au_*.csv 
+-rw-rw---- 1 amadeus-prod_cabestan_01 users  644 2016-08-29 06:46 Cabestan_retourADLC_au_29082016.csv
+-rw-rw---- 1 amadeus-prod_cabestan_01 users  944 2016-08-30 07:01 Cabestan_retourADLC_au_30082016.csv
+-rw-rw---- 1 amadeus-prod_cabestan_01 users  697 2016-08-31 06:46 Cabestan_retourADLC_au_31082016.csv
+GDF04_1-21 h1x1jeklo_FTPS :>id infa
+uid=2888(infa) gid=100(users) groups=100(users)
+
+atanganae:x:1040:1000::/mnt/data/nada/users/atanganae:/bin/bash
+
+du -h |  awk '{printf "%s %08.2f\t%s\n",index("KMG", substr($1, length($1))), substr($1, 0, length($1)-1), $0}' | sort -r | cut -f2,3
+
+rsync -avz sar.data.txt root@10.172.41.131:/appli/GCC_DBA/
+
+rsync -avrz ./* root@10.172.41.122:/DATA/app/Sauvegardes
+
+rsync -avrz /sites/GEC_PROD/export/home/* root@10.172.41.151:/sites/GEC_PROD/export/home/
+rsync -avrz /appli/input/* root@10.172.41.151:/appli/input/
+
+rsync -avrz /var/opt/teradata/GCC_DBA/* /nada/nada/users/
+
+rsync -avrz /sites/NADA_PROD/export/home/* root@10.172.41.150:/sites/NADA_PROD/export/home/
+
+rsync -avrz ./*.mig root@10.172.65.11:/etc/
+
+#0 7 3 * * sar -A 5 8640 > /tmp/sar.`date '+%Y%m%d'`.txt
+#0 8 29 * * sar -A 10 2880 > /tmp/sar.data2.txt
+
+12 16 * * * cd /tmp/nmon && sar -A 5 10
+
+30 16 * * * sar -A 5 80 > /tmp/nmon/sar.`date '+%Y%m%d'`.txt
+winddi
+
+rsync -avrz /home/oracle/SchemaExport/AMD_INT3_2017* root@39.80.16.13:/home/oracle/SchemaExport
+
+rsync -avrz /home/oracle/GCC_DBA/delete_views.sql root@39.80.16.13:/home/oracle/GCC_DBA/
+
+C:\Users\LT186007.TD\AppData\Roaming\Skype\taglud\media_messaging\media_cache_v3
+
+echo "This is message body" | mail -s "This is Subject" ludovic.taghe@Teradata.com
+
+chown -R desaulcesm:sasgrp /mnt/data/nada/users/desaulcesm/*
+
+/etc/pam.d/common-auth
+auth    required        pam_env.so
+auth    required        pam_unix2.so
+auth    required        pam_tally2.so deny=7 even_deny_root unlock_time=1800
+
+ChallengeResponseAuthentication no
+PermitRootLogin no
+StrictModes yes
+
+echo 'Tera0 ALL=(ALL) ALL' >> /etc/sudoers
+
+tdcGDF03
+AMDsftps2016!
+/etc/pam.d/common-account
+account required        pam_unix2.so
+account required        pam_tally2.so
+
+h1x1islof:/var/log # pam_tally --user thbr
+User thbr       (500)   has 17
+h1x1islof:/var/log # pam_tally --user thbr --reset=0 
+User thbr       (500)   had 17
+h1x1islof:/var/log # pam_tally --user thbr
+User thbr       (500)   has 0
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAt1J2JI18+Rz9xel2WPxVT8VbzVjB1AMDXtr7sAA2AL77rnUYiPMUPg2kUj0iCxGdglUsS9GgWzwjZbWj3PLrTO1xWQnzEI+/pqbBJKbGd6DLDEE4pVkaeL5TbhndQYJbJsAn
+/MwnjmzuahEPVPM+EvC1dQdIhkMJL846y+c7cRy0t682W8mX4BCpOZDsIu3w4VhRweU4qEmwVlhduAX2aDdv45Mk05FVtptYk7u8W29MNIPfvGpI6Ck6gxo76FiviGoitwtZdnCx9Q40NFZPZBTJ6cKmJZsiqWXKemBHsPPO
+Yp1bFpwTG42OU6NBELWSWBCCOWmLbZqE3e6tS/LYiQ== UserBI@h1x1amd11v
+
+INFO: Moved to state <finish>
+INFO: Adding ExitStatus SUCCESS_WITH_WARNINGS to the exit status set
+INFO: Finding the most appropriate exit status for the current application
+INFO: Exit Status is 6
+INFO: List of warnings encountered in this Application:
+INFO: PREREQS_FAILED_WITH_WARNING
+INFO: Shutdown Oracle Database 11g Release 2 Installer
+oracle@h1x1zenar:/DATA/database>
+
+# chage -I -1 -m 0 -M 99999 -E -1 username
+
+ACL command:
+setfacl -m u:mf_user:+w /appli/csv/
+
+PUBLIC KEY GENERATION:
+cat ~/.ssh/id_rsa.pub | ssh user@10.172.41.131 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+
+cat ~/.ssh/id_rsa.pub | ssh oracle@10.172.41.145 "cat >>  ~/.ssh/authorized_keys"
+
+h1x1amd11v:/var/log # df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda2              30G   25G  3.2G  89% /
+udev                   32G  216K   32G   1% /dev
+tmpfs                  32G   12K   32G   1% /dev/shm
+/dev/sda5             5.0G  388M  4.3G   9% /var
+/dev/sda7             756G   49G  670G   7% /var/opt/teradata
+/dev/sdb1             2.5T  613G  1.9T  25% /data
+/dev/sdb2             1.7T  613G  1.1T  38% /appli
+
+for group in `cat del.user`;do groupdel $group;done
+
+
+awk -v LIMIT=1000 -F: '($3 >= LIMIT) && ($3 != 65534)' /etc/passwd > /etc/passwd.mig
+awk -v LIMIT=1000 -F: '($3 >= LIMIT) && ($3 != 65534)' /etc/group > /etc/group.mig
+awk -v LIMIT=1000 -F: '($3 >= LIMIT) && ($3 != 65534) { print $1 }' /etc/shadow | tee - | egrep -f - /etc/shadow > /etc/shadow.mig
+
+chmod ug-s csv
+
+df -h | mail -s disk Ludovic.Taghe@Teradata.com
+
+DECLARE 
+   x number := 10; 
+BEGIN 
+   LOOP 
+      dbms_output.put_line(x); 
+      x := x + 10; 
+      IF x > 50 THEN 
+         exit; 
+      END IF; 
+   END LOOP; 
+   -- after exit, control resumes here  
+   dbms_output.put_line('After Exit x is: ' || x); 
+END; 
+/
+
+Failure on DROP USER. Error code:   3552
+
+Sep 25 10:27:53 h1x1mipol vsftpd: pam_warn(ftp:auth): function=[pam_sm_authenticate] service=[ftp] terminal=[ftp] user=[amadeus-prod_armatis_01] ruser=[amadeus-prod_armatis_01] rhost=[10.172.6.36]
+
+h1x1mipol sshd[9743]: Accepted keyboard-interactive/pam for amadeus-prod_armatis_01 from 10.149.39.254 port 61048 ssh2
+
